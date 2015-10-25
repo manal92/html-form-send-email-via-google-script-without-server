@@ -10,10 +10,10 @@ jQuery( document ).ready(function( $ ) {
     $("#gform").submit(function(event){
         // prevent default posting of form
         event.preventDefault();
-        var email = $('#email').val();
+        var email = $('#البريد الإلكتروني').val();
         console.log(' >> '+ email);
         if(!validateEmail(email)) { // validate the email address
-          $('#email-invalid').show();
+          $('#البريد الإلكتروني-invalid').show();
           return false;
         }
         // abort any pending request
