@@ -5,7 +5,7 @@ function validEmail(email) { // see:
 }
 // get all data in form and return object
 function getFormData() {
-  var elements = document.getElementById("gform").elements; // all form elements
+  var elements = document.getElementById("qform").elements; // all form elements
   var fields = Object.keys(elements).map(function(k) {
     if(elements[k].name !== undefined) {
       return elements[k].name;
@@ -36,8 +36,8 @@ function handleFormSubmit(event) {  // handles form submit withtout any jquery
     xhr.onreadystatechange = function() {
         console.log( xhr.status, xhr.statusText )
         console.log(xhr.responseText);
-        document.getElementById('gform').style.display = 'none'; // hide form
-        document.getElementById('thankyou_message').style.display = 'block';
+        document.getElementById('qform').style.display = 'none'; // hide form
+        document.getElementById('thankyou_message2').style.display = 'block';
         return;
     };
     // url encode form data for sending as post data
@@ -50,7 +50,7 @@ function handleFormSubmit(event) {  // handles form submit withtout any jquery
 function loaded() {
   console.log('contact form submission handler loaded successfully');
   // bind to the submit event of our form
-  var form = document.getElementById('gform');
+  var form = document.getElementById('qform');
   form.addEventListener("submit", handleFormSubmit, false);
 };
 document.addEventListener('DOMContentLoaded', loaded, false);
